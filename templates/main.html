@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+		}
+		h3 {
+			color: #444;
+			font-size: 28px;
+			margin-bottom: 20px;
+		}
+		a {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #008cba;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			margin-right: 10px;
+		}
+		a:hover {
+			background-color: #006380;
+		}
+	</style>
+</head>
+<body>
+  {% csrf_token %}
+             {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <p  style="color:rgb(0, 0, 255)" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </p>
+    {% endfor %}
+</ul>
+{% endif %}
+
+	<h3>{{user}}</h3>
+	{%if profile%}
+	<a href="/get">Download Your Resume</a>
+  <a href="/edit-resume">Edit Resume</a>
+	{%endif%}
+	{%if not profile%}
+	<a href="/resume">Create Resume</a>
+	{%endif%}
+	<a href="/register">Register</a>
+	<a href="/logout">Logout</a>
+
+</body>
+</html>

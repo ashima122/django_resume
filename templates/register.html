@@ -1,0 +1,76 @@
+<! DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Login form
+ </title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo">
+          <div class="card-body p-3 p-md-6">
+            <h4 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registaration Form</h4>
+
+            <form class="px-md-2" method="POST">
+                    {% csrf_token %}
+<div class="row">
+              <div class="col-md-6 mb-4">
+                 <label class="form-label" for="form3Example1q">Full Name</label>
+                <input type="text" id="form3Example1q" name="username" class="form-control" />
+
+              </div>
+              <div class="col-md-6 mb-4">
+                 <label class="form-label" for="form3Example1q">Email</label>
+                <input type="email" id="email" name="email" class="form-control" />
+
+              </div>
+</div>
+              <div class="row">
+              <div class="col-md-6 mb-4">
+                 <label class="form-label" for="form3Example1q">Phone Number</label>
+                <input type="number" id="no" name="phone_number" class="form-control" />
+
+              </div>
+              <div class="col-md-6 mb-4">
+                 <label class="form-label" for="form3Example1q">Address</label>
+                <textarea  id="address" name="address" class="form-control" rows="1"></textarea>
+
+              </div>
+              </div>
+                <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline datepicker">
+                    <label for="exampleDatepicker1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleDatepicker1" name="password" />
+
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <label for="exampleDatepicker1" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleDate" name="confirm_password" />
+
+                </div>
+                  </div>
+              <button type="submit" class="btn btn-success btn-lg mb-1 d-block mx-auto">Submit</button><br>
+                Already have Account ? <a href="/login">Login</a>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
