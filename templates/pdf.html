@@ -109,49 +109,32 @@ textarea {
 
 </style>
 <body>
-	<header>
-		<h1>CV Form</h1>
-	</header>
 	<form action="" method="post">
 		 {% csrf_token %}
 		<fieldset>
 			<legend>Personal Information</legend>
-			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" value="{{user.username}}" readonly>
-			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" value="{{user.email}}" readonly>
-			<label for="phone">Phone:</label>
-			<input type="tel" id="phone" name="phone" value="{{user.phone_number}}" readonly>
-			<label for="address">Address:</label>
-			<input type="text" id="address" name="address" value="{{user.address}}" readonly>
-			<label for="city">City:</label>
-			<input type="text" id="city" name="city" value="{{pro.city}}">
-			<label for="state">State:</label>
-			<input type="text" id="state" name="state" value="{{pro.state}}">
-			<label for="zip">Zip Code:</label>
-			<input type="text" id="zip" name="zipcode" value="{{pro.zipcode}}" >
+			<label for="name">Name:                                         {{user.username}}</label>
+			<label for="email">Email:                                       {{user.email}}</label>
+			<label for="phone">Phone:                                       {{user.phone_number}}</label>
+			<label for="address">Address:                                   {{user.address}}</label>
+			<label for="city">City:                                         {{pro.city}}</label>
+			<label for="state">State:                                       {{pro.state}}</label>
+			<label for="zip">Zip Code:                                      {{pro.zipcode}}</label>
 		</fieldset>
 		<fieldset>
 			<legend>Education</legend>
-			<label for="degree">Degree:</label>
-			<input type="text" id="degree" name="degree" value="{{pro.degree}}">
-			<label for="school">School:</label>
-			<input type="text" id="school" name="school" value="{{pro.school}}">
-			<label for="graduation">Graduation Date:</label>
-			<input type="date" id="graduation" name="graduation" value="{{pro.graduation}}">
+			<label for="degree">Degree:</label>{{pro.degree}}
+			<label for="school">School:</label>{{pro.school}}
+			<label for="graduation">Graduation Date:</label> {{pro.graduation}}
 		</fieldset>
 		<fieldset>
 			<legend>Experience</legend>
-			<label for="company">Company:</label>
-			<input type="text" id="company" name="company" value="{{pro.company}}">
-			<label for="position">Position:</label>
-			<input type="text" id="position" name="position" value="{{pro.position}}">
-			<label for="start">Start Date:</label>
-			<input type="date" id="start" name="start_date" value="{{pro.start_date}}">
-			<label for="end">End Date:</label>
-			<input type="date" id="end" name="end_date" value="{{pro.end_date}}">
-			<label for="description">Description:</label>
-			<textarea id="description" name="description" >{{pro.description}}</textarea>
+			<label for="company">Company: </label>{{pro.company}}
+			<label for="position">Position:</label>{{pro.position}}
+			<label for="start">Start Date: </label> {{pro.start_date}}
+			<label for="end">End Date:</label>  {{pro.end_date}}
+			<label for="description">Description: </label> {{pro.description}}
+
 		</fieldset>
 	</form>
 </body>
